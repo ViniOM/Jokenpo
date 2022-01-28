@@ -25,7 +25,7 @@ console.clear();
     for (let i = 0; i < rodadas; i++ ){
 
     turnos++;
-    var jogador = prompt("Pedra, Papel, Tesoura? ");
+    var jogador = prompt("pedra, papel, tesoura? ");
     console.clear();
 
         while (jogador != "pedra" && jogador != "papel" && jogador != "tesoura"){
