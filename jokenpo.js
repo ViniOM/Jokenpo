@@ -2,7 +2,7 @@ const prompt = require('prompt-sync')();
 console.clear();
 
 
-var nome = prompt("Qual seu nome? ");
+var nome = prompt("Qual seu nome? ").toUpperCase();
 var rodadas;
 var jokenpo = ["pedra", "papel", "tesoura"];
 
@@ -20,20 +20,21 @@ computadorVitorias = 0;
 turnos = 0;
 i = 0;
 rodadas = +prompt("Quantas rodadas quer jogar? ");
+    while(isNaN(rodadas)) {
+        console.log("       DIGITE UM NUMERO! ");
+        rodadas = +prompt("Quantas rodadas quer jogar? ");
+    }
 console.clear();
 
     for (let i = 0; i < rodadas; i++ ){
 
     turnos++;
-    var jogador = prompt("pedra, papel, tesoura? ");
+    var jogador = prompt("Pedra, Papel, Tesoura? ").toLowerCase();
     console.clear();
 
         while (jogador != "pedra" && jogador != "papel" && jogador != "tesoura"){
             console.log("-------------------------------");
-            console.log("!--!     INVALIDO     !--!");
-            console.log("-------------------------------");
-            console.log();
-            jogador = prompt("pedra, papel ou tesoura?  ");
+            jogador = prompt("pedra, papel ou tesoura?  ").toLowerCase();
             console.clear();
         }
 
@@ -110,6 +111,7 @@ console.clear();
                 }
             } 
         }
+    
 
     if (jogadorVitorias > computadorVitorias) {
         console.log(`       ------ ${nome} VENCEU! ------`);
@@ -124,13 +126,9 @@ console.clear();
         
     }
     console.log();
-    reiniciar = prompt("Deseja reiniciar? ");
-    }
+    reiniciar = prompt("Deseja reiniciar? (sim | nao) ").toLowerCase();
     console.clear();
+}
+    
     console.log("OBRIGADO POR JOGAR!")
     console.log();
-    
-
-
-
-
