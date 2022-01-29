@@ -3,9 +3,8 @@ console.clear();
 
 
 var nome = prompt("Qual seu nome? ").toUpperCase();
-var rodadas;
-var jokenpo = ["pedra", "papel", "tesoura"];
 
+var jokenpo = ["pedra", "papel", "tesoura"];
 var aleat = Math.floor(Math.random()*jokenpo.length);
 var computador = jokenpo[aleat];
 
@@ -13,6 +12,7 @@ var jogadorVitorias = 0;
 var computadorVitorias = 0;
 var turnos = 0;
 var reiniciar = "sim";
+var rodadas;
 
 while (reiniciar == "sim") {
 jogadorVitorias = 0;
@@ -28,6 +28,9 @@ console.clear();
 
     for (let i = 0; i < rodadas; i++ ){
 
+    aleat = Math.floor(Math.random()*jokenpo.length);
+    computador = jokenpo[aleat];
+        
     turnos++;
     var jogador = prompt("Pedra, Papel, Tesoura? ").toLowerCase();
     console.clear();
@@ -130,5 +133,5 @@ console.clear();
     console.clear();
 }
     
-    console.log("OBRIGADO POR JOGAR!")
+    console.log("OBRIGADO POR JOGAR!");
     console.log();
